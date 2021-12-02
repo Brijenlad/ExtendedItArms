@@ -3,7 +3,7 @@ import numpy as np
 from datetime import date
 import sys
 from dateutil.parser import parse
-#read csv file
+
 def is_date(string, fuzzy=False):
     """
     Return whether the string can be interpreted as a date.
@@ -21,7 +21,7 @@ def is_date(string, fuzzy=False):
 
 todays_date = date.today() #todays date in yyyy-mm-dd
 print(todays_date)
-dataFrame = pd.read_csv("patient.csv") #read csv and data frame created
+dataFrame = pd.read_csv(sys.argv[1]) #read csv and data frame created
 print(dataFrame) #show data
 dataFrame2 = pd.DataFrame() #created new dataframe
 dataFrame2["Patient_Name"] = dataFrame["Patient_First_Name"]+" "+ dataFrame["Patient_Last_Name"] #conactenated 2 columns from original dataframe
